@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Matriz {
     private double[][] dados;
     private int linhas;
@@ -9,14 +11,46 @@ public class Matriz {
         dados = new double[linhas][colunas];
     }
 
+    public Matriz(Matriz matriz) {
+        linhas = matriz.GetLinhas();
+        colunas = matriz.GetColunas();
+        dados = new double[linhas][colunas];
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                dados[i][j] = matriz.GetValue(i, j);
+            }
+        }
+    }
+
+    public int GetLinhas() {
+        return linhas;
+    }
+
+    public int GetColunas() {
+        return colunas;
+    }
+
     public double GetValue(int linha, int coluna) {
         return dados[linha][coluna];
+    }
+
+    public void SetValue(int linha, int coluna, double dado) {
+        dados[linha][coluna] = dado;
     }
 
     public void FillRandom(float escala) {
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < colunas; j++) {
                 dados[i][j] = (Math.random() - 0.5) * escala;
+            }
+        }
+    }
+
+    public void FillInput(Scanner sc) {
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.println(String.format("Digite o valor(%d, %d): ", i, j));
+                dados[i][j] = sc.nextFloat();
             }
         }
     }
