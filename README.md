@@ -10,7 +10,15 @@
     elements -> Um array com os elementos da matriz.
 ```
 
-(-) Um método chamado get que tem como função retornar o valor armazenado em uma determinada posição da matriz. O método recebe como parâmetros a linha e a coluna da posição do elemento da matriz e retorna o valor armazenado nesta posição. A assinatura da função get deve seguir a seguinte estrutura:
+(-) Um método chamado get que tem como
+ função retornar o valor armazenado em uma
+  determinada posição da matriz. O método
+   recebe como parâmetros a linha e a
+    coluna da posição do elemento da matriz
+     e retorna o valor armazenado nesta
+      posição. A assinatura da função get
+       deve seguir a seguinte estrutura:
+       
 
 ```
     get(i, j){}
